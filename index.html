@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Vote</title>
+</head>
+<body>
+    
+    <!-- SECTION Main Login Window -->
+    <div class="window">
+        <!-- SECTION Image Section -->
+        <div class="image">
+            <picture>
+                <source srcset="image-big.png" type="image/png" media="(min-width:1920px)"> 
+                <source srcset="image-med.png" type="image/png" media="(min-width:1200px)"> 
+                <source srcset="image-small.png" type="image/png" media="(min-width:700px)"> 
+                <img src="blue.png" alt="Test" class="abc">
+            </picture>
+            <picture style="display:none">
+                <source srcset="image-big.png" type="image/png" media="(min-width:1920px)"> 
+                <source srcset="image-med.png" type="image/png" media="(min-width:1200px)"> 
+                <source srcset="image-small.png" type="image/png" media="(min-width:700px)"> 
+                <img src="blue.png" alt="Test" class="abc">
+            </picture>
+        </div>
+        <!-- !SECTION -->
+        <!-- SECTION  Form Login-->
+        <div class="form">
+            <form action="">
+                <!-- ANCHOR Form -->
+                <label for="fname">First Name</label>
+                <input type="text" name="first_name" id="fname">
+                <label for="lname">Last Name</label>
+                <input type="text" name="last_name" id="lname">
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" id="email">
+                <label for="pwd">Password</label>
+                <input type="password" name="password" id="pwd">
+                <input type="submit" value="">
+                <!-- ANCHOR Vote Toggle -->
+                <input type="button" value="" class="toggle AV JL">
+            </form>
+        </div>
+        <!-- !SECTION -->
+    </div>
+    <!-- !SECTION -->
+</body>
+</html>
