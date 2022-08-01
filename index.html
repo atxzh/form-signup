@@ -13,7 +13,6 @@
     <div class="window">
         <!-- SECTION Image Section -->
         <div class="image">
-            <!-- <img src="./assets/DC_Bg.webp" alt="DC Background" class="BG"> -->
             <div class="logo">
                 <img src="assets/DC_Logo.png" alt="DC Logo">
             </div>
@@ -22,42 +21,51 @@
         <!-- SECTION  Form Login-->
         <div class="form">
             <p>
-                This is not a real online service! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Necessitatibus, commodi!
+                This is not a real online service! Just a Random Fandom Created Website. Random Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Quasi et distinctio culpa suscipit ducimus maiores? Quisquam mollitia
+                perferendis cum! Repellat sint natus reprehenderit tempora voluptas mollitia beatae minus praesentium
+                quaerat.
             </p>
             <p>
-                Sign up now to get started.
-            </p>
-            <p>
-                You know you want to.
+                Register with your favourite Comic Character!
             </p>
             <form>
                 <!-- ANCHOR Form -->
                 <div class="field">
                     <label for="fname">First Name</label>
-                    <input type="text" name="first_name" id="fname">
+                    <input type="text" name="first_name" id="fname" class="text">
                 </div>
                 <div class="field">
                     <label for="lname">Last Name</label>
-                    <input type="text" name="last_name" id="lname">
+                    <input type="text" name="last_name" id="lname" class="text">
                 </div>
                 <div class="field">
                     <label for="email">E-Mail</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" class="text" required>
+                </div>
+                <div class="field">
+                    <label for="number">Phone Number</label>
+                    <input type="number" name="number" id="number" class="text">
                 </div>
                 <div class="field">
                     <label for="pwd">Password</label>
-                    <input type="password" name="password" id="pwd">
+                    <input type="password" name="password" id="pwd" class="text" required>
                 </div>
                 <div class="field">
-                    <label for="charcter">Character</label>
-                    <input type="text" name="character" id="character">
+                    <label for="cpwd">Confirm Password</label>
+                    <input type="password" name="cpassword" id="cpwd" class="text" required>
                 </div>
-                <!-- ANCHOR Vote Toggle -->
-                <div class="toggle">
-                    <input type="radio" value="" class="DC">
-                    <input type="radio" value="" class="rand">
-                    <input type="radio" value="" class="MARVEL">
+                <div class="choice">
+                    <!-- ANCHOR Vote Toggle -->
+                    <div class="toggle">
+                        <input type="radio" name="comic-char" value="dc" class="tog dc">
+                        <input type="radio" name="comic-char" value="rand" class="tog rand">
+                        <input type="radio" name="comic-char" value="marvel" class="tog marvel">
+                    </div>
+                    <div class="field">
+                        <label for="charcter">Character</label>
+                        <input type="text" name="character" id="character" class="text">
+                    </div>
                 </div>
                 <!-- ANCHOR Submit -->
                 <input type="submit" value="Register" class="button">
