@@ -27,33 +27,36 @@
                 quaerat.
             </p>
             <p>
-                Register with your favourite Comic Character!
+                Register with your Comic Character!
             </p>
             <form>
                 <!-- ANCHOR Form -->
                 <div class="field">
+                    <input type="text" name="first_name" id="fname" class="text" placeholder=" " autocomplete="off">
                     <label for="fname">First Name</label>
-                    <input type="text" name="first_name" id="fname" class="text">
                 </div>
                 <div class="field">
+                    <input type="text" name="last_name" id="lname" class="text" placeholder=" " autocomplete="off">
                     <label for="lname">Last Name</label>
-                    <input type="text" name="last_name" id="lname" class="text">
                 </div>
                 <div class="field">
+                    <input type="email" name="email" id="email" class="text" required placeholder=" "
+                        autocomplete="off">
                     <label for="email">E-Mail</label>
-                    <input type="email" name="email" id="email" class="text" required>
                 </div>
                 <div class="field">
+                    <input type="number" name="number" id="number" class="text" placeholder=" " autocomplete="off">
                     <label for="number">Phone Number</label>
-                    <input type="number" name="number" id="number" class="text">
                 </div>
                 <div class="field">
+                    <input type="password" name="password" id="pwd" class="text" required placeholder=" "
+                        autocomplete="off">
                     <label for="pwd">Password</label>
-                    <input type="password" name="password" id="pwd" class="text" required>
                 </div>
                 <div class="field">
+                    <input type="password" name="cpassword" id="cpwd" class="text" required placeholder=" "
+                        autocomplete="off">
                     <label for="cpwd">Confirm Password</label>
-                    <input type="password" name="cpassword" id="cpwd" class="text" required>
                 </div>
                 <div class="choice">
                     <!-- ANCHOR Vote Toggle -->
@@ -63,8 +66,9 @@
                         <input type="radio" name="comic-char" value="marvel" class="tog marvel">
                     </div>
                     <div class="field">
+                        <input type="text" name="character" id="character" class="text" required placeholder=" "
+                            autocomplete="off">
                         <label for="charcter">Character</label>
-                        <input type="text" name="character" id="character" class="text">
                     </div>
                 </div>
                 <!-- ANCHOR Submit -->
