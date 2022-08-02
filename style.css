@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;500&family=M+PLUS+Code+Latin:wght@400;500;600&display=swap');
 
 * {
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
 }
 
 :root {
@@ -126,6 +126,7 @@ body {
 
 p {
     padding: 0.5rem;
+    font-size: 1.3rem;
 }
 
 p:last-of-type {
@@ -201,7 +202,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* ANCHOR Label Edits */
 .text+label {
     position: absolute;
-    left: min(59px, 12%, 3.5rem);
+    left: min(59px, 3.5rem, 5vw);
     font-size: 0.9rem;
     font-weight: 500;
 
@@ -218,7 +219,7 @@ input[type=number]::-webkit-outer-spin-button {
 .text:focus+label,
 .text.not-empty+label {
     transform: translateY(-.9rem);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 
     color: var(--dc-light-full);
 }
