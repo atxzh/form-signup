@@ -266,9 +266,9 @@ input[type=number]::-webkit-outer-spin-button {
     max-width: fit-content;
     align-self: center;
     cursor: pointer;
-    height: 2rem;
-    margin-top: 10px;
-    padding: 5px 10px 1px;
+    height: fit-content;
+    margin-top: 15px;
+    padding: 10px 15px;
 
     background: linear-gradient(80deg,
             var(--dc-light-transp) 0%,
@@ -280,7 +280,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 30px;
 
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 1.2rem;
     color: var(--default-white);
 
     transition: 0.3s;
