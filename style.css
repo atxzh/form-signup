@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;500&family=M+PLUS+Code+Latin:wght@400;500;600&display=swap');
 
 * {
     outline: 1px solid red;
 }
 
 :root {
-    font-size: 20px;
+    font-size: clamp(1rem, 1vw, 2rem);
     font-family: var(--main-font);
     line-height: 1.5;
     color: var(--default-white);
 
-    --main-font: 'Yanone Kaffeesatz', sans-serif;
+    --main-font: 'M PLUS Code Latin', sans-serif;
+    --side-font: 'Edu QLD Beginner', cursive;
 
     --default-black: rgba(19, 17, 13, 0.7);
     --default-white: rgba(255, 255, 255, 0.693);
@@ -120,6 +121,10 @@ body {
     background-color: var(--default-black);
 }
 
+p {
+    padding: 0.5rem;
+}
+
 p:last-of-type {
     align-self: center;
     font-weight: 600;
@@ -155,17 +160,29 @@ form label {
     flex: 1 1 max(120px, 33%);
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
 /* SECTION Text Entry */
 
 .text {
     width: 80%;
     height: 2rem;
-    margin: 0 0 1px;
-    padding: 10px 15px 5px;
+    margin: 0 0 0;
+    padding: 20px 15px 0px;
 
     border-radius: 3px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-    font-family: var(--main-font);
+
+    font-family: var(--side-font);
+    font-size: 1rem;
+    font-weight: 500;
+    appearance: none;
 }
 
 .text:focus {
@@ -175,18 +192,25 @@ form label {
 /* ANCHOR Label Edits */
 .text+label {
     position: absolute;
-    left: 45px;
-    font-size: 0.95rem;
+    left: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    padding: 0;
+    margin: 5px -5px 0px;
 
     color: grey;
 
     transition: transform 0.2s ease-in-out;
+
+    cursor: text;
+    user-select: none;
 }
 
 .text:focus+label,
 .text.not-empty+label {
-    transform: translateY(-24px);
-    font-size: 0.85rem;
+    transform: translateY(-20px);
+    font-size: 0.75rem;
 
     color: var(--dc-light-full);
 }
