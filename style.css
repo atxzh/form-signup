@@ -180,8 +180,10 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 20px max(20px, 1rem) 0px;
 
     border-radius: 3px;
+    border-bottom-width: 5px;
+    border-bottom-color: gray;
+
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-    border-bottom: 5px;
 
     font-family: var(--side-font);
     font-size: 1.2rem;
@@ -192,6 +194,8 @@ input[type=number]::-webkit-outer-spin-button {
 .text:focus {
     border-color: var(--dc-light-transp);
     outline: none;
+
+    border-bottom-color: var(--dc-light-full);
 }
 
 /* ANCHOR Label Edits */
@@ -200,9 +204,12 @@ input[type=number]::-webkit-outer-spin-button {
     left: min(59px, 12%, 3.5rem);
     font-size: 0.9rem;
     font-weight: 500;
+
     padding: 0;
     margin: 5px -5px 1px;
+
     color: grey;
+
     transition: transform 0.2s ease-in-out;
     cursor: text;
     user-select: none;
