@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="./assets/Comic-Con.svg" type="image/x-icon">
     <title>Comic-Con Register</title>
 </head>
 
@@ -61,9 +62,9 @@
                 <div class="choice">
                     <!-- ANCHOR Vote Toggle -->
                     <div class="toggle">
-                        <input type="radio" name="comic-char" value="dc" class="tog dc">
-                        <input type="radio" name="comic-char" value="rand" class="tog rand">
-                        <input type="radio" name="comic-char" value="marvel" class="tog marvel">
+                        <input type="radio" name="comic-char" value="dc" class="tog dc" data-choice="DC">
+                        <input type="radio" name="comic-char" value="rand" class="tog rand" data-choice="Others">
+                        <input type="radio" name="comic-char" value="marvel" class="tog marvel" data-choice="Marvel">
                     </div>
                     <div class="field">
                         <input type="text" name="character" id="character" class="text" required placeholder=" "
