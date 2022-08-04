@@ -15,7 +15,7 @@
         <!-- SECTION Image Section -->
         <div class="image">
             <div class="logo">
-                <img src="assets/DC_Logo.png" alt="DC Logo">
+                <img src="assets/Rand_Logo.png" alt="Logo" id="logo">
             </div>
         </div>
         <!-- !SECTION -->
@@ -30,7 +30,7 @@
             <p>
                 Register with your Comic Character!
             </p>
-            <form>
+            <form action="">
                 <!-- ANCHOR Form -->
                 <div class="field">
                     <input type="text" name="first_name" id="fname" class="text" placeholder=" " autocomplete="off">
@@ -47,23 +47,23 @@
                 </div>
                 <div class="field">
                     <input type="number" name="number" id="number" class="text" placeholder=" " autocomplete="off">
-                    <label for="number">Phone Number</label>
+                    <label for="number" minlength="10">Phone Number</label>
                 </div>
                 <div class=" field">
                     <input type="password" name="password" id="pwd" class="text" required placeholder=" "
-                        autocomplete="new-password">
+                        autocomplete="new-password" minlength="8">
                     <label for="pwd">Password</label>
                 </div>
                 <div class="field">
                     <input type="password" name="cpassword" id="cpwd" class="text" required placeholder=" "
-                        autocomplete="new-password">
+                        autocomplete="new-password" minlength="8">
                     <label for="cpwd">Confirm Password</label>
                 </div>
                 <div class="choice">
                     <!-- ANCHOR Vote Toggle -->
                     <div class="toggle">
                         <input type="radio" name="comic-char" value="dc" class="tog dc" data-choice="DC">
-                        <input type="radio" name="comic-char" value="rand" class="tog rand" data-choice="Others">
+                        <input type="radio" name="comic-char" value="rand" class="tog rand select" data-choice="Others">
                         <input type="radio" name="comic-char" value="marvel" class="tog marvel" data-choice="Marvel">
                     </div>
                     <div class="field">
@@ -79,6 +79,8 @@
         <!-- !SECTION -->
     </div>
     <!-- !SECTION -->
+
+    <script src="./script.js"></script>
 </body>
 
 </html>

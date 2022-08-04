@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;500&family=M+PLUS+Code+Latin:wght@400;500;600&display=swap');
 
-* {
+/* * {
     outline: 1px solid red;
-
-}
+} */
 
 :root {
     font-size: clamp(15px, 1.5vw, 1rem);
@@ -21,13 +20,18 @@
     --dc-light-transp: rgba(4, 118, 242, 0.8);
     --dc-dark: rgba(33, 2, 113, 0.9);
 
-    --rand-light-full: rgba(121, 9, 73, 1);
-    --rand-light-transp: rgba(121, 9, 73, 0.8);
-    --rand-dark: rgb(65, 5, 23, 0.9);
+    --rand-light-full: rgb(144, 14, 177);
+    --rand-light-transp: rgba(144, 14, 177, 0.8);
+    --rand-dark: rgba(99, 9, 121, 0.9);
 
     --marvel-light-full: rgba(240, 19, 30, 1);
     --marvel-light-transp: rgba(240, 19, 30, 0.8);
     --marvel-dark: rgba(105, 10, 10, 0.9);
+
+    --light-full: var(--rand-light-full);
+    --light-transp: var(--rand-light-transp);
+    --dark: var(--rand-dark);
+
 }
 
 
@@ -36,13 +40,15 @@ body {
     padding: 0;
     min-height: 100vh;
 
-    background: linear-gradient(90deg,
+    background-image: linear-gradient(90deg,
             var(--dc-light-full) 0%,
-            var(--rand-light-full) 80%,
+            var(--rand-light-full) 30%,
             var(--marvel-light-full) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* transition: background-image 2s ease-in-out; */
 }
 
 /* SECTION Main Window */
@@ -55,7 +61,7 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
 
-    box-shadow: 0 15px 25px var(--dc-dark);
+    box-shadow: 0 15px 25px var(--dark);
 
     display: flex;
     flex-wrap: wrap;
@@ -80,9 +86,9 @@ body {
 
     /* DIV Background */
     background-image: linear-gradient(80deg,
-            var(--dc-light-full) 0%,
-            var(--dc-light-transp) 40%,
-            var(--dc-dark) 100%), url(./assets/DC_Bg.webp);
+            var(--light-full) 0%,
+            var(--light-transp) 40%,
+            var(--dark) 100%), url(./assets/Rand_Bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -193,24 +199,22 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .text:focus {
-    border-color: var(--dc-light-transp);
+    border-color: var(--light-transp);
     outline: none;
 
-    border-bottom-color: var(--dc-light-full);
+    border-bottom-color: var(--light-full);
 }
+
 
 /* ANCHOR Label Edits */
 .text+label {
     position: absolute;
-    left: min(59px, 3.5rem, 5vw);
+    left: max(2rem, 10%);
     font-size: 0.9rem;
     font-weight: 500;
-
     padding: 0;
     margin: 5px -5px 1px;
-
     color: grey;
-
     transition: transform 0.2s ease-in-out;
     cursor: text;
     user-select: none;
@@ -221,15 +225,21 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateY(-.9rem);
     font-size: 0.75rem;
 
-    color: var(--dc-light-full);
+    color: var(--light-full);
 }
 
 .text.invalid:focus+label,
 .text.invalid+label {
     transform: translateY(-.9rem);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 
-    color: red;
+    color: rgb(206, 72, 0);
+}
+
+
+.text.invalid {
+    border-bottom-color: rgb(206, 72, 0);
+    background-color: rgb(255, 205, 172);
 }
 
 /* !SECTION */
@@ -254,21 +264,21 @@ input[type=number]::-webkit-outer-spin-button {
 
 .toggle {
     width: fit-content;
-    margin: 1.9rem 0rem 0.2rem;
+    margin: 1rem 0rem 0.2rem;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    background-color: var(--default-black);
+    /* background-color: var(--default-black); */
 
-    border: 3px solid var(--default-black);
-    border-radius: 50px;
+    /* border: 3px solid var(--default-black);
+    border-radius: 50px; */
 }
 
 .tog {
-    height: 2.5rem;
+    height: 3rem;
     width: 8rem;
 
     appearance: none;
@@ -278,20 +288,20 @@ input[type=number]::-webkit-outer-spin-button {
 
 .tog:hover {
     cursor: pointer;
-    opacity: 1;
 }
 
 .tog::after {
     content: attr(data-choice);
     position: relative;
-
+    top: .45rem;
     font-family: var(--main-font);
-    font-size: 2rem;
+    font-size: 1.75rem;
 
     color: white;
 }
 
-.tog:hover::after {
+.tog:hover::after,
+.tog.select::after {
     color: black;
 }
 
@@ -307,28 +317,34 @@ input[type=number]::-webkit-outer-spin-button {
     background-image: linear-gradient(90deg, var(--marvel-light-full) 0%, var(--default-black) 80%);
 }
 
-.tog.dc:hover {
+.tog.dc:hover,
+.tog.dc.select {
     background-image: linear-gradient(90deg, var(--dc-light-full) 20%, var(--dc-dark) 100%);
+    opacity: 1;
 }
 
-.tog.rand:hover {
+.tog.rand:hover,
+.tog.rand.select {
     background-image: linear-gradient(90deg, var(--rand-light-full) 20%, var(--rand-dark) 100%);
+    opacity: 1;
 }
 
-.tog.marvel:hover {
+.tog.marvel:hover,
+.tog.marvel.select {
     background-image: linear-gradient(90deg, var(--marvel-light-full) 20%, var(--marvel-dark) 100%);
+    opacity: 1;
 }
 
 .tog.dc::after {
-    left: 3rem;
+    left: 3.22rem;
 }
 
 .tog.rand::after {
-    left: 1.1rem;
+    left: 1.32rem;
 }
 
 .tog.marvel::after {
-    left: 1.1rem;
+    left: 1.32rem;
 }
 
 /* !SECTION */
@@ -346,11 +362,11 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 10px 15px;
 
     background: linear-gradient(80deg,
-            var(--dc-light-transp) 0%,
-            var(--dc-dark) 60%) border-box,
+            var(--light-transp) 0%,
+            var(--dark) 60%) border-box,
         linear-gradient(80deg,
             var(--default-black) 0%,
-            var(--dc-light-full) 60%) padding-box;
+            var(--light-full) 60%) padding-box;
     border: 5px solid transparent;
     border-radius: 30px;
 
@@ -363,13 +379,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .button:hover {
     background: linear-gradient(80deg,
-            var(--dc-light-transp) 0%,
-            var(--dc-dark) 60%) border-box,
+            var(--light-transp) 0%,
+            var(--dark) 60%) border-box,
         linear-gradient(80deg,
-            var(--dc-light-transp) 0%,
-            var(--dc-dark) 60%) padding-box;
+            var(--light-transp) 0%,
+            var(--dark) 60%) padding-box;
 
-    color: var(--dc-light-transp);
+    color: var(--light-transp);
 }
 
 /* !SECTION */
