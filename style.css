@@ -31,9 +31,7 @@
     --light-full: var(--rand-light-full);
     --light-transp: var(--rand-light-transp);
     --dark: var(--rand-dark);
-
 }
-
 
 body {
     margin: 0;
@@ -47,20 +45,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* transition: background-image 2s ease-in-out; */
 }
 
 /* SECTION Main Window */
 
 .window {
     margin: 1.5rem;
-    width: calc(100vw - 50px);
-    height: calc(100vh - 50px);
-
-    box-sizing: border-box;
+    min-height: max-content;
     border-radius: 10px;
-
     box-shadow: 0 15px 25px var(--dark);
 
     display: flex;
@@ -68,14 +60,16 @@ body {
     justify-content: center;
     align-self: center;
 
+    background-color: var(--default-black);
+
+    overflow: hidden;
 }
 
 /* SECTION: Image */
 .image {
-    /* max-width: max(100%, 40%); */
-    min-height: max(35%, 2.5rem, 200px);
+
+    min-height: max(200px, 2.5rem);
     max-height: min-content;
-    /* max-width: fit-content; */
 
     display: flex;
     justify-content: center;
@@ -97,7 +91,7 @@ body {
 .logo {
     position: absolute;
     width: 100%;
-    /* min-width: 300px; */
+
     height: fit-content;
     margin: 2rem 0;
 
@@ -109,7 +103,6 @@ body {
 }
 
 .logo img {
-    /* position: absolute; */
     width: max(150px, 15%);
 }
 
@@ -127,7 +120,7 @@ body {
     flex: 1 1 780px;
     font-size: 1.2rem;
 
-    background-color: var(--default-black);
+    /* background-color: var(--default-black); */
 }
 
 p {
@@ -267,14 +260,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 1rem 0rem 0.2rem;
 
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    /* background-color: var(--default-black); */
-
-    /* border: 3px solid var(--default-black);
-    border-radius: 50px; */
 }
 
 .tog {
@@ -358,7 +345,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-self: center;
     cursor: pointer;
     height: fit-content;
-    margin-top: 15px;
+    margin: 15px 0px;
     padding: 10px 15px;
 
     background: linear-gradient(80deg,
