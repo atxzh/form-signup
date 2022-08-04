@@ -37,31 +37,35 @@ elements.slice(2, elements.length).forEach((element, index) => {
                 input.classList.add('invalid')
                 label.classList.add('invalid')
             } else {
-                input.classList.remove('invalid')
-                label.classList.remove('invalid')
+
+                if (element.id == 'cpwd') checkConfirmPass(e)
+                else {
+                    if (element.id == 'pwd') checkConfirmPass(e)
+                    input.classList.remove('invalid')
+                    label.classList.remove('invalid')
+                }
             }
         });
     });
 
 });
 
-['input'].forEach((e) => {
-    elements[5].addEventListener(e, () => {
+// Compare & Report on Confirm Password
+function checkConfirmPass(e) {
 
-        if (elements[4].value !== elements[5].value) {
-            elements[5].classList.add('invalid')
-            elements[5].nextElementSibling.classList.add('invalid')
+    if (elements[4].value !== elements[5].value) {
+        elements[5].classList.add('invalid')
+        elements[5].nextElementSibling.classList.add('invalid')
 
-            elements[5].setCustomValidity('Passwords do not Match')
-        } else {
-            elements[5].classList.remove('invalid')
-            elements[5].nextElementSibling.classList.remove('invalid')
-            elements[5].setCustomValidity('')
-        }
-
-        elements[5].reportValidity();
-    });
-});
+        elements[5].setCustomValidity('Passwords do not Match')
+    } else if (elements[4].value === elements[5].value) {
+        elements[5].classList.remove('invalid')
+        elements[5].nextElementSibling.classList.remove('invalid')
+        elements[5].setCustomValidity('')
+    }
+    if (e == 'blur') elements[5].setCustomValidity('')
+    elements[5].reportValidity();
+}
 
 // !SECTION
 
@@ -149,6 +153,7 @@ toggles.forEach((radio) => {
             return -1
         }
 
+        // Remove Select Class from Other 
         toggles.filter((item) => { return item != radio }).forEach((item) => item.classList.remove('select'))
 
     })
