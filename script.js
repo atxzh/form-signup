@@ -113,6 +113,7 @@ toggles.forEach((radio) => {
 
         }
 
+        // SECTION Colors
         if (radio.value == 'dc') {
             // ANCHOR DC
 
@@ -152,6 +153,7 @@ toggles.forEach((radio) => {
         } else {
             return -1
         }
+        // !SECTION
 
         // Remove Select Class from Other 
         toggles.filter((item) => { return item != radio }).forEach((item) => item.classList.remove('select'))
