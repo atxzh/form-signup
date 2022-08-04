@@ -65,3 +65,51 @@ elements.slice(2, elements.length).forEach((element, index) => {
 
 // !SECTION
 
+const toggles = Array.from(document.querySelectorAll('.tog'))
+
+toggles.forEach((radio) => {
+    radio.addEventListener('click', () => {
+        radio.classList.add('select')
+
+        let bg_clr = window.getComputedStyle(document.body).getPropertyValue('background-image');
+        const bg_regex = new RegExp(/(\b\d{1,3})(?=%)/, 'g');
+        let count = 0;
+
+        // ANCHOR DC
+        if (radio.value == 'dc') {
+
+            const bg_percentage = [0, 80, 100]
+
+            let bg_clr_new = bg_clr.replace(bg_regex, () => bg_percentage[count++]);
+
+            document.body.style.setProperty('background-image', bg_clr_new)
+
+        }
+
+        // ANCHOR RAND
+        else if (radio.value == 'rand') {
+
+            const bg_percentage = [0, 30, 100]
+
+            let bg_clr_new = bg_clr.replace(bg_regex, () => bg_percentage[count++]);
+
+            document.body.style.setProperty('background-image', bg_clr_new)
+
+        }
+
+        // ANCHOR MARVEL
+        else if (radio.value == 'marvel') {
+
+            const bg_percentage = [0, 30, 50];
+
+            let bg_clr_new = bg_clr.replace(bg_regex, () => bg_percentage[count++]);
+
+            document.body.style.setProperty('background-image', bg_clr_new)
+
+        } else {
+            return -1
+        }
+
+        toggles.filter((item) => { return item != radio }).forEach((item) => item.classList.remove('select'))
+    })
+})
