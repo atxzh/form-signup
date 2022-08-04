@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;500&family=M+PLUS+Code+Latin:wght@400;500;600&display=swap');
 
 * {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 
 }
 
@@ -23,11 +23,15 @@
 
     --rand-light-full: rgba(121, 9, 73, 1);
     --rand-light-transp: rgba(121, 9, 73, 0.8);
-    --rand-dark: rgb(65, 5, 23, 0.9);
+    --rand-dark: rgba(65, 5, 23, 0.9);
 
     --marvel-light-full: rgba(240, 19, 30, 1);
     --marvel-light-transp: rgba(240, 19, 30, 0.8);
     --marvel-dark: rgba(105, 10, 10, 0.9);
+
+    --light-full: var(--rand-light-full);
+    --light-transp: var(--rand-light-transp);
+    --dark: var(--rand-dark);
 
 }
 
@@ -58,7 +62,7 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
 
-    box-shadow: 0 15px 25px var(--dc-dark);
+    box-shadow: 0 15px 25px var(--dark);
 
     display: flex;
     flex-wrap: wrap;
@@ -83,9 +87,9 @@ body {
 
     /* DIV Background */
     background-image: linear-gradient(80deg,
-            var(--dc-light-full) 0%,
-            var(--dc-light-transp) 40%,
-            var(--dc-dark) 100%), url(./assets/DC_Bg.webp);
+            var(--light-full) 0%,
+            var(--light-transp) 40%,
+            var(--dark) 100%), url(./assets/Rand_Bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -196,10 +200,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .text:focus {
-    border-color: var(--dc-light-transp);
+    border-color: var(--light-transp);
     outline: none;
 
-    border-bottom-color: var(--dc-light-full);
+    border-bottom-color: var(--light-full);
 }
 
 /* ANCHOR Label Edits */
@@ -224,7 +228,7 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateY(-.9rem);
     font-size: 0.75rem;
 
-    color: var(--dc-light-full);
+    color: var(--light-full);
 }
 
 .text.invalid:focus+label,
@@ -232,13 +236,13 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateY(-.9rem);
     font-size: 0.85rem;
 
-    color: red;
+    color: rgb(121, 0, 0);
 }
 
 
 .text.invalid {
 
-    border-bottom-color: red
+    border-bottom-color: rgb(121, 0, 0)
 }
 
 /* !SECTION */
@@ -361,11 +365,11 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 10px 15px;
 
     background: linear-gradient(80deg,
-            var(--dc-light-transp) 0%,
-            var(--dc-dark) 60%) border-box,
+            var(--light-transp) 0%,
+            var(--dark) 60%) border-box,
         linear-gradient(80deg,
             var(--default-black) 0%,
-            var(--dc-light-full) 60%) padding-box;
+            var(--light-full) 60%) padding-box;
     border: 5px solid transparent;
     border-radius: 30px;
 
@@ -378,13 +382,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .button:hover {
     background: linear-gradient(80deg,
-            var(--dc-light-transp) 0%,
-            var(--dc-dark) 60%) border-box,
+            var(--light-transp) 0%,
+            var(--dark) 60%) border-box,
         linear-gradient(80deg,
-            var(--dc-light-transp) 0%,
-            var(--dc-dark) 60%) padding-box;
+            var(--light-transp) 0%,
+            var(--dark) 60%) padding-box;
 
-    color: var(--dc-light-transp);
+    color: var(--light-transp);
 }
 
 /* !SECTION */
