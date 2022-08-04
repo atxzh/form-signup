@@ -21,9 +21,9 @@
     --dc-light-transp: rgba(4, 118, 242, 0.8);
     --dc-dark: rgba(33, 2, 113, 0.9);
 
-    --rand-light-full: rgba(121, 9, 73, 1);
-    --rand-light-transp: rgba(121, 9, 73, 0.8);
-    --rand-dark: rgba(65, 5, 23, 0.9);
+    --rand-light-full: rgb(144, 14, 177);
+    --rand-light-transp: rgba(144, 14, 177, 0.8);
+    --rand-dark: rgba(99, 9, 121, 0.9);
 
     --marvel-light-full: rgba(240, 19, 30, 1);
     --marvel-light-transp: rgba(240, 19, 30, 0.8);
@@ -234,15 +234,15 @@ input[type=number]::-webkit-outer-spin-button {
 .text.invalid:focus+label,
 .text.invalid+label {
     transform: translateY(-.9rem);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 
-    color: rgb(121, 0, 0);
+    color: rgb(206, 72, 0);
 }
 
 
 .text.invalid {
 
-    border-bottom-color: rgb(121, 0, 0)
+    border-bottom-color: rgb(206, 72, 0);
 }
 
 /* !SECTION */
@@ -281,7 +281,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .tog {
-    height: 2.5rem;
+    height: 3rem;
     width: 8rem;
 
     appearance: none;
@@ -296,9 +296,9 @@ input[type=number]::-webkit-outer-spin-button {
 .tog::after {
     content: attr(data-choice);
     position: relative;
-
+    top: .45rem;
     font-family: var(--main-font);
-    font-size: 2rem;
+    font-size: 1.75rem;
 
     color: white;
 }
@@ -339,15 +339,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .tog.dc::after {
-    left: 3rem;
+    left: 3.22rem;
 }
 
 .tog.rand::after {
-    left: 1.1rem;
+    left: 1.32rem;
 }
 
 .tog.marvel::after {
-    left: 1.1rem;
+    left: 1.32rem;
 }
 
 /* !SECTION */
